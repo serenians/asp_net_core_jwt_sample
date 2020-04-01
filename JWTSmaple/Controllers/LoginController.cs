@@ -76,7 +76,7 @@ namespace JWTSmaple.Controllers
         }
 
         [Authorize]
-        [HttpPost]
+        [HttpPost("Post")]
         public string Post()
         {
             var identity = HttpContext.User.Identity as ClaimsIdentity;
@@ -86,6 +86,7 @@ namespace JWTSmaple.Controllers
             return "Welcome To:" + username;
         }
 
+        [Authorize]
         [HttpGet("GetValue")]
         public ActionResult<IEnumerable<string>> Get()
         {
